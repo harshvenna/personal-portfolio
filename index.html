@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Venna — Data Analyst Portfolio | Python, SQL & Power BI</title>
+
+<meta name="description" content="Harsh Veeraraghavalu Venna is a Data Analyst and Computer Science student specializing in Python, SQL, Power BI, and Machine Learning. Explore data analytics projects, dashboards, and case studies.">
+<meta name="keywords" content="Harsh Venna, Data Analyst, Data Analytics Portfolio, Python Developer, SQL, Power BI, Machine Learning, Business Intelligence, Data Visualization, Computer Science Student">
+<meta name="author" content="Harsh Veeraraghavalu Venna">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://harshvenna.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Harsh Venna — Data Analyst Portfolio">
+<meta property="og:description" content="Data Analyst specializing in Python, SQL, Power BI and Machine Learning. Explore projects, dashboards and case studies.">
+<meta property="og:url" content="https://harshvenna.github.io/">
+<meta property="og:image" content="assets/images/og-cover.jpg">
+<meta property="og:site_name" content="Harsh Venna Portfolio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Harsh Venna — Data Analyst Portfolio">
+<meta name="twitter:description" content="Data Analyst specializing in Python, SQL, Power BI and Machine Learning.">
+<meta name="twitter:image" content="assets/images/og-cover.jpg">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Harsh Veeraraghavalu Venna",
+  "jobTitle": "Data Analyst",
+  "email": "mailto:harshvennaix@gmail.com",
+  "telephone": "+91-7756894199",
+  "url": "https://harshvenna.github.io/",
+  "sameAs": [
+    "https://github.com/harshvenna",
+    "https://www.linkedin.com/in/harsh-venna-a7a7a53a9"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ambernath West, Mumbai",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Ramchand Kimatram Talreja College of Arts, Science & Commerce"
+  },
+  "knowsAbout": ["Data Analysis", "Python", "SQL", "Power BI", "Machine Learning", "Data Visualization"]
+}
+</script>
+</head>
+<body>
+
+<!-- ================= AMBIENT BACKGROUND ================= -->
+<canvas id="ambientCanvas" aria-hidden="true"></canvas>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ================= COMMAND PALETTE ================= -->
+<div class="cmdk-backdrop" id="cmdkBackdrop" aria-hidden="true">
+  <div class="cmdk" role="dialog" aria-label="Command palette" aria-modal="true">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="Jump to a section, open a link, or toggle theme…" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="cmdk-list" id="cmdkList"></div>
+    <div class="cmdk-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+      <span><kbd>Enter</kbd> Select</span>
+      <span><kbd>Esc</kbd> Close</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= KEYBOARD SHORTCUTS HELP ================= -->
+<div class="cmdk-backdrop" id="shortcutsBackdrop" aria-hidden="true">
+  <div class="cmdk shortcuts-modal" role="dialog" aria-label="Keyboard shortcuts" aria-modal="true">
+    <div class="shortcuts-head">
+      <h4>Keyboard shortcuts</h4>
+      <button id="shortcutsClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="shortcuts-grid">
+      <div><kbd>⌘</kbd><kbd>K</kbd><span>Open command palette</span></div>
+      <div><kbd>/</kbd><span>Open command palette</span></div>
+      <div><kbd>T</kbd><span>Toggle light / dark theme</span></div>
+      <div><kbd>?</kbd><span>Show this panel</span></div>
+      <div><kbd>Esc</kbd><span>Close any open panel</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader" aria-hidden="true">
+  <div class="loader-mark">INITIALIZING&nbsp;PORTFOLIO</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"><span class="cursor-label">View</span></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="#home" class="nav-logo"><span class="dot" aria-hidden="true"></span>harsh<span>venna</span>.dev</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66 4.93 19.07M19.07 4.93 17.66 6.34"/></svg>
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
+      <button class="palette-trigger" id="paletteTrigger" aria-label="Open command palette">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span class="palette-kbd">⌘K</span>
+      </button>
+      <a href="assets/resume/Harsh_Venna_Resume.pdf" class="btn btn-primary btn-sm" download>Resume</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span class="line" aria-hidden="true"></span>Available for Data Analyst roles</p>
+      <h1 class="hero-title">
+        <span class="line1">Hi, I'm Harsh Veeraraghavalu Venna</span>
+        Turning raw data into<br><span class="gradient">business decisions.</span>
+      </h1>
+      <p class="hero-typing"><span id="typingText"></span><span class="cursor-blink">|</span></p>
+      <p class="hero-desc">Computer Science student and Data Analyst who builds dashboards, cleans messy datasets, and uncovers insights that move the needle — using Python, SQL, and Power BI. Currently interning as a Data Analyst at Unified Mentor.</p>
+      <div class="hero-actions">
+        <a href="assets/resume/Harsh_Venna_Resume.pdf" class="btn btn-primary" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+          Download Resume
+        </a>
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Hire Me</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/harshvenna" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/harsh-venna-a7a7a53a9" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="mailto:harshvennaix@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </a>
+        <a href="assets/resume/Harsh_Venna_Resume.pdf" download class="social-icon" aria-label="Download Resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l3 3 3-3M12 18v-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-blob"></div>
+      <div class="orbit-ring r1"></div>
+      <div class="orbit-ring r2"></div>
+      <div class="photo-frame">
+        <div class="photo-frame-inner">
+          <picture>
+            <source srcset="assets/images/profile.webp" type="image/webp">
+            <img src="assets/images/profile.jpg" alt="Harsh Veeraraghavalu Venna" width="300" height="300" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+      <div class="tech-chip tc-1">🐍 Python</div>
+      <div class="tech-chip tc-2">🗄️ SQL</div>
+      <div class="tech-chip tc-3">📊 Power BI</div>
+      <div class="tech-chip tc-4">🔧 Git</div>
+      <div class="tech-chip tc-5">🐙 GitHub</div>
+      <div class="tech-chip tc-6">🤖 ML</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="scroll-mouse"></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-visual reveal">
+      <div class="about-card glass">
+        <p class="section-tag">Who I Am</p>
+        <h3 style="font-size:1.4rem; margin-bottom:0.6rem;">Data Analyst &amp; CS Student</h3>
+        <p style="color:var(--text-secondary); font-size:0.92rem;">Based in Mumbai, Maharashtra — building data-driven solutions for real business problems.</p>
+        <div class="about-stat-grid">
+          <div class="about-stat"><div class="num">9.1</div><div class="lbl">CGPA</div></div>
+          <div class="about-stat"><div class="num">6+</div><div class="lbl">Projects Shipped</div></div>
+          <div class="about-stat"><div class="num">1</div><div class="lbl">Internship</div></div>
+          <div class="about-stat"><div class="num">5+</div><div class="lbl">Certifications</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-body reveal">
+      <p class="section-tag">About Me</p>
+      <h2 class="section-title">I turn messy data into <span class="accent-text">clear decisions.</span></h2>
+      <p>I'm a <strong>Computer Science student</strong> and aspiring <strong>Data Analyst</strong> with a strong foundation in <strong>Python, SQL, and Power BI</strong>, currently sharpening my skills through hands-on internship work and self-driven analytics projects.</p>
+      <p>My focus is on the full analytics lifecycle — from <strong>data cleaning</strong> and <strong>exploratory data analysis (EDA)</strong> to building interactive <strong>dashboards</strong> and communicating <strong>business insights</strong> that stakeholders can actually act on. I enjoy the moment a messy spreadsheet turns into a dashboard that tells a story.</p>
+      <p>Beyond the technical toolkit, I bring a <strong>problem-solving mindset</strong>, curiosity about how businesses work, and the communication skills to translate numbers into narratives for both technical and non-technical audiences. I'm actively exploring <strong>Machine Learning</strong> to extend analysis into prediction.</p>
+      <div class="about-tags">
+        <span class="about-tag">Data Analyst</span>
+        <span class="about-tag">Machine Learning Enthusiast</span>
+        <span class="about-tag">Problem Solver</span>
+        <span class="about-tag">Business Insights</span>
+        <span class="about-tag">Data Visualization</span>
+        <span class="about-tag">Power BI</span>
+        <span class="about-tag">Python</span>
+        <span class="about-tag">SQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="section" id="skills" style="background:var(--surface-1);">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <p class="section-tag" style="margin-inline:auto;">Skill Set</p>
+      <h2 class="section-title">Tools I use to solve <span class="accent-text">data problems.</span></h2>
+      <p class="section-desc" style="margin-inline:auto;">A practical toolkit spanning programming, analytics, machine learning and business intelligence.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card glass reveal">
+        <div class="skill-card-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h4>Programming</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-row"><span>Python</span><span class="bar-track"><span class="bar-fill" style="--pct:92%"></span></span><span class="mono">92%</span></div>
+          <div class="skill-row"><span>SQL</span><span class="bar-track"><span class="bar-fill" style="--pct:88%"></span></span><span class="mono">88%</span></div>
+          <div class="skill-row"><span>Java</span><span class="bar-track"><span class="bar-fill" style="--pct:75%"></span></span><span class="mono">75%</span></div>
+          <div class="skill-row"><span>JavaScript</span><span class="bar-track"><span class="bar-fill" style="--pct:70%"></span></span><span class="mono">70%</span></div>
+          <div class="skill-row"><span>C</span><span class="bar-track"><span class="bar-fill" style="--pct:68%"></span></span><span class="mono">68%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass reveal">
+        <div class="skill-card-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></div>
+          <h4>Data Analytics</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-row"><span>Power BI</span><span class="bar-track"><span class="bar-fill" style="--pct:90%"></span></span><span class="mono">90%</span></div>
+          <div class="skill-row"><span>Excel</span><span class="bar-track"><span class="bar-fill" style="--pct:88%"></span></span><span class="mono">88%</span></div>
+          <div class="skill-row"><span>Pandas / NumPy</span><span class="bar-track"><span class="bar-fill" style="--pct:90%"></span></span><span class="mono">90%</span></div>
+          <div class="skill-row"><span>Data Cleaning &amp; EDA</span><span class="bar-track"><span class="bar-fill" style="--pct:91%"></span></span><span class="mono">91%</span></div>
+          <div class="skill-row"><span>Dashboard Dev</span><span class="bar-track"><span class="bar-fill" style="--pct:86%"></span></span><span class="mono">86%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass reveal">
+        <div class="skill-card-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6M4.2 4.2l4.2 4.2m7.2 7.2 4.2 4.2M1 12h6m10 0h6M4.2 19.8l4.2-4.2m7.2-7.2 4.2-4.2"/></svg></div>
+          <h4>Machine Learning</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-row"><span>Scikit-Learn</span><span class="bar-track"><span class="bar-fill" style="--pct:78%"></span></span><span class="mono">78%</span></div>
+          <div class="skill-row"><span>TensorFlow</span><span class="bar-track"><span class="bar-fill" style="--pct:62%"></span></span><span class="mono">62%</span></div>
+          <div class="skill-row"><span>PyTorch</span><span class="bar-track"><span class="bar-fill" style="--pct:58%"></span></span><span class="mono">58%</span></div>
+          <div class="skill-row"><span>Business Intelligence</span><span class="bar-track"><span class="bar-fill" style="--pct:84%"></span></span><span class="mono">84%</span></div>
+          <div class="skill-row"><span>Matplotlib</span><span class="bar-track"><span class="bar-fill" style="--pct:85%"></span></span><span class="mono">85%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-card glass reveal">
+        <div class="skill-card-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <h4>Tools &amp; Soft Skills</h4>
+        </div>
+        <div class="skill-list">
+          <div class="skill-row"><span>Git &amp; GitHub</span><span class="bar-track"><span class="bar-fill" style="--pct:87%"></span></span><span class="mono">87%</span></div>
+          <div class="skill-row"><span>VS Code / Jupyter</span><span class="bar-track"><span class="bar-fill" style="--pct:92%"></span></span><span class="mono">92%</span></div>
+          <div class="skill-row"><span>Docker</span><span class="bar-track"><span class="bar-fill" style="--pct:55%"></span></span><span class="mono">55%</span></div>
+          <div class="skill-row"><span>Communication</span><span class="bar-track"><span class="bar-fill" style="--pct:90%"></span></span><span class="mono">90%</span></div>
+          <div class="skill-row"><span>Critical Thinking</span><span class="bar-track"><span class="bar-fill" style="--pct:93%"></span></span><span class="mono">93%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <p class="section-tag" style="margin-inline:auto;">Experience</p>
+      <h2 class="section-title">Where I've <span class="accent-text">applied it.</span></h2>
+      <p class="section-desc" style="margin-inline:auto;">Real-world data work — from raw datasets to decisions leadership could act on.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <div class="timeline-top">
+            <h3 class="timeline-role">Data Analyst Intern</h3>
+            <span class="timeline-period">2025 — Present</span>
+          </div>
+          <div class="timeline-org">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-3V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1ZM9 5h6v2H9Z"/></svg>
+            Unified Mentor
+          </div>
+          <ul class="timeline-list">
+            <li>Performed end-to-end data cleaning on raw, unstructured business datasets to ensure analysis-ready quality.</li>
+            <li>Built interactive Power BI dashboards and reports for stakeholder decision-making.</li>
+            <li>Wrote SQL queries to extract, join, and aggregate data across multiple sources.</li>
+            <li>Conducted exploratory data analysis (EDA) using Python to surface trends and anomalies.</li>
+            <li>Delivered business insights and interactive reports that informed operational strategy.</li>
+            <li>Automated recurring reporting workflows, reducing manual turnaround time.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS / CASE STUDIES ================= -->
+<section class="section" id="projects" style="background:var(--surface-1);">
+  <div class="container">
+    <div class="section-head text-center reveal case-studies-intro">
+      <p class="section-tag" style="margin-inline:auto;">Featured Work</p>
+      <h2 class="section-title">Two systems, <span class="accent-text">end to end.</span></h2>
+      <p class="section-desc" style="margin-inline:auto;">Full-stack decision-intelligence builds — from raw data to a deployed dashboard a stakeholder could actually use. Problem, architecture, results, and the honest limitations.</p>
+    </div>
+
+    <!-- CASE STUDY 1 — NASSAU CANDY / SUPPLYCHAINAI -->
+    <article class="case-study glass reveal cs-nassau">
+      <div class="cs-content">
+        <div class="cs-header">
+          <div class="cs-eyebrow-row">
+            <span class="cs-index mono">01 / 02</span>
+            <span class="data-badge" style="--accent-amber:var(--accent-2); background:rgba(6,182,212,0.1); border-color:rgba(6,182,212,0.32); color:var(--accent-2);">Independent / Academic Project</span>
+          </div>
+          <h3 class="cs-title">SupplyChainAI — Factory Reallocation &amp; Shipping Optimization</h3>
+          <p class="cs-subtitle">A decision-intelligence platform for a candy distributor's 5-factory network — combining predictive ML, multi-objective optimization, Monte Carlo simulation, and SHAP explainability behind a 12-tab Streamlit dashboard.</p>
+        </div>
+
+        <div class="cs-meta-row">
+          <span>10,194 orders analyzed</span>
+          <span>5 factories · 15 products</span>
+          <span>2024 – 2026</span>
+          <span>Python 3.12</span>
+        </div>
+
+        <div class="cs-block">
+          <h4>Problem</h4>
+          <p>The distributor assigned products to factories using static legacy rules — resulting in suboptimal shipping distances, uneven utilization (one factory, Lot's O' Nuts, handled 55.7% of all units), avoidable margin erosion, and no way to simulate a better allocation before committing to it.</p>
+        </div>
+
+        <div class="cs-block">
+          <h4>Architecture</h4>
+          <p>A modular pipeline: <code class="mono">data_pipeline.py</code> engineers 45 features from the raw order data, <code class="mono">ml_models.py</code> trains and benchmarks a 6-model suite, <code class="mono">optimization_engine.py</code> scores reallocation scenarios and runs Monte Carlo simulation, and <code class="mono">shap_explainer.py</code> generates global/local explanations — all surfaced through a 12-tab Streamlit dashboard (Executive Overview, EDA, Factory Analytics, Route Intelligence, ML Models, Optimization Simulator, Recommendations, Monte Carlo, SHAP, Factory Map, Risk Analytics, Executive Report).</p>
+        </div>
+
+        <div class="cs-block">
+          <h4>Results</h4>
+          <div class="cs-metric-grid cols-4">
+            <div class="cs-metric"><div class="m-val">0.999</div><div class="m-lbl">R² — lead time model (Gradient Boosting)</div></div>
+            <div class="cs-metric"><div class="m-val">0.997</div><div class="m-lbl">R² — gross profit model</div></div>
+            <div class="cs-metric amber"><div class="m-val">1,000+</div><div class="m-lbl">Monte Carlo runs per scenario</div></div>
+            <div class="cs-metric amber"><div class="m-val">−29.2%</div><div class="m-lbl">Lead-time reduction, top recommendation</div></div>
+          </div>
+        </div>
+
+        <div class="cs-block">
+          <h4>Optimization framework</h4>
+          <p class="mono" style="font-size:0.86rem; color:var(--text-secondary); background:rgba(255,255,255,0.03); padding:0.9rem 1.1rem; border-radius:var(--r-sm); border:1px solid var(--border-glass);">Score = 0.40 × Lead-Time Reduction + 0.30 × Profit Improvement + 0.20 × Risk Reduction + 0.10 × Confidence Score</p>
+        </div>
+
+        <div class="cs-block">
+          <h4>Key decisions &amp; honest limitations</h4>
+          <ul>
+            <li>Built as an <strong>academic/independent project</strong> using the Nassau Candy sample dataset — a demonstration of pipeline design and operations-research methodology, not a live client engagement.</li>
+            <li>The top-ranked recommendation (SweeTARTS, Interior region: Sugar Shack → Secret Factory) scored <strong>77.6 / 100</strong> on the composite objective — reallocation, not a black-box output.</li>
+          </ul>
+        </div>
+
+        <div class="cs-tech-badges">
+          <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>XGBoost</span><span>LightGBM</span><span>CatBoost</span><span>SHAP</span><span>Streamlit</span><span>Plotly</span>
+        </div>
+
+        <div class="cs-actions">
+          <a href="https://github.com/harshvenna/Nassau-Candy-Factory-Optimization-System" target="_blank" rel="noopener" class="btn btn-outline magnetic">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+            View Source on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="cs-media">
+        <div class="cs-gallery-sticky">
+          <div class="cs-gallery-frame" data-gallery="nassau">
+            <div class="gallery-slide active"><picture><source srcset="assets/case-studies/nassau/01-executive-overview.webp" type="image/webp"><img src="assets/case-studies/nassau/01-executive-overview.jpg" loading="lazy" width="1400" height="784" alt="SupplyChainAI Executive Overview — revenue, profit margin and factory KPIs"></picture></div>
+            <div class="gallery-slide"><picture><source srcset="assets/case-studies/nassau/02-eda-insights.webp" type="image/webp"><img src="assets/case-studies/nassau/02-eda-insights.jpg" loading="lazy" width="1400" height="787" alt="SupplyChainAI EDA — revenue and gross profit by product"></picture></div>
+            <div class="gallery-slide"><picture><source srcset="assets/case-studies/nassau/03-factory-analytics.webp" type="image/webp"><img src="assets/case-studies/nassau/03-factory-analytics.jpg" loading="lazy" width="1400" height="785" alt="SupplyChainAI Factory Analytics — load and performance summary"></picture></div>
+            <div class="gallery-slide"><picture><source srcset="assets/case-studies/nassau/04-monte-carlo.webp" type="image/webp"><img src="assets/case-studies/nassau/04-monte-carlo.jpg" loading="lazy" width="1400" height="785" alt="SupplyChainAI Monte Carlo simulation — lead time distribution"></picture></div>
+            <span class="cs-gallery-caption" data-caption-for="nassau">Executive Overview</span>
+          </div>
+          <div class="cs-gallery-dots" data-dots-for="nassau">
+            <button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE STUDY 2 — WORKFORCE ENGAGEMENT & BURNOUT INTELLIGENCE -->
+    <article class="case-study glass reveal cs-workforce">
+      <div class="cs-content">
+        <div class="cs-header">
+          <div class="cs-eyebrow-row">
+            <span class="cs-index mono">02 / 02</span>
+            <span class="data-badge">Illustrative / Synthetic Data</span>
+          </div>
+          <h3 class="cs-title">Workforce Engagement &amp; Burnout Intelligence Platform</h3>
+          <p class="cs-subtitle">A 14-module enterprise-style Streamlit suite covering engagement, burnout risk, career stagnation, attrition early-warning, ML prediction, SHAP explainability, and an HR scenario simulator.</p>
+        </div>
+
+        <div class="cs-meta-row">
+          <span>1,470 employees · 31 fields</span>
+          <span>14 modules</span>
+          <span>2025 – 2026</span>
+          <span>Python · Streamlit</span>
+        </div>
+
+        <div class="cs-block">
+          <h4>Problem &amp; data disclosure</h4>
+          <p>HR teams need to move past static headcount reporting toward proactively flagging engagement, burnout, and attrition risk. The underlying dataset is structurally modeled on the public IBM HR Analytics Attrition dataset and used here as <strong>illustrative/synthetic data</strong> to demonstrate platform architecture and methodology — every page in the app carries an "Illustrative Data" badge, and it is not real personnel data from any employer.</p>
+        </div>
+
+        <div class="cs-block">
+          <h4>Architecture</h4>
+          <p>A single, sectioned <code class="mono">app.py</code> spanning a shared Foundation layer plus 13 feature modules: Executive Overview, Employee Experience EDA, Engagement Intelligence, Burnout Risk Center, Workload Stress Analytics, Department Intelligence, Career &amp; Growth Analytics, Attrition Early Warning, a Machine Learning Hub, an Explainable AI Center (SHAP), K-Means Workforce Segmentation, an HR Scenario Simulator, and Workforce Risk / Manager Action Center.</p>
+        </div>
+
+        <div class="cs-block">
+          <h4>Results</h4>
+          <div class="cs-metric-grid">
+            <div class="cs-metric"><div class="m-val">0.77–0.80</div><div class="m-lbl">AUC — attrition model (real label)</div></div>
+            <div class="cs-metric amber"><div class="m-val">5</div><div class="m-lbl">Engineered KPIs, fully transparent formulas</div></div>
+            <div class="cs-metric"><div class="m-val">0.27</div><div class="m-lbl">Silhouette score — K-Means segmentation</div></div>
+          </div>
+        </div>
+
+        <div class="cs-block">
+          <h4>Key decisions &amp; honest limitations</h4>
+          <ul>
+            <li>Engineered KPIs (Engagement Index, Burnout Risk Score, Workforce Health Score) are <strong>documented weighted formulas</strong>, never a black-box score.</li>
+            <li>Burnout/engagement classifiers deliberately exclude their own formula's direct inputs to avoid circular prediction — expect a modest AUC of <strong>~0.55–0.65</strong> there, by design, not a bug. The attrition model (a real label) performs better at <strong>~0.77–0.80</strong>.</li>
+            <li>The HR Scenario Simulator re-runs the exact same formulas used elsewhere in the app — a single source of truth rather than a separate toy model.</li>
+            <li>K-Means segmentation reports an honest <strong>~0.27 silhouette score</strong> rather than implying stronger natural clustering than the data supports; the HR department (63 employees) is treated as a small-n slice with wider error margins.</li>
+          </ul>
+        </div>
+
+        <div class="cs-tech-badges">
+          <span>Python</span><span>Streamlit</span><span>Pandas</span><span>Scikit-learn</span><span>SHAP</span><span>K-Means</span><span>Plotly</span>
+        </div>
+
+        <div class="cs-actions">
+          <a href="https://github.com/harshvenna/-Workforce-Intelligence-Analytics-System-" target="_blank" rel="noopener" class="btn btn-outline magnetic">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+            View Source on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="cs-media">
+        <div class="cs-gallery-sticky">
+          <div class="cs-gallery-frame" data-gallery="workforce">
+            <div class="gallery-slide active"><picture><source srcset="assets/case-studies/workforce/01-executive-overview.webp" type="image/webp"><img src="assets/case-studies/workforce/01-executive-overview.jpg" loading="lazy" width="1400" height="787" alt="Workforce Intelligence Platform Executive Overview — engagement, burnout and health gauges"></picture></div>
+            <div class="gallery-slide"><picture><source srcset="assets/case-studies/workforce/02-burnout-risk-center.webp" type="image/webp"><img src="assets/case-studies/workforce/02-burnout-risk-center.jpg" loading="lazy" width="1400" height="788" alt="Burnout Risk Center — department × risk category heatmap"></picture></div>
+            <div class="gallery-slide"><picture><source srcset="assets/case-studies/workforce/03-ml-hub.webp" type="image/webp"><img src="assets/case-studies/workforce/03-ml-hub.jpg" loading="lazy" width="1400" height="787" alt="Machine Learning Hub — model comparison, ROC curve and confusion matrix"></picture></div>
+            <div class="gallery-slide"><picture><source srcset="assets/case-studies/workforce/04-shap-explainability.webp" type="image/webp"><img src="assets/case-studies/workforce/04-shap-explainability.jpg" loading="lazy" width="1400" height="787" alt="Explainable AI Center — SHAP beeswarm feature importance plot"></picture></div>
+            <span class="cs-gallery-caption" data-caption-for="workforce">Executive Overview</span>
+          </div>
+          <div class="cs-gallery-dots" data-dots-for="workforce">
+            <button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button><button aria-label="Slide 4"></button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="more-projects-head reveal">
+      <h3>More from the resume</h3>
+      <p>Smaller builds — same attention to the fundamentals.</p>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project-card glass reveal">
+        <div class="project-thumb"><div class="thumb-grid"></div>
+          <div class="thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <span class="project-badge">Predictive Modeling</span>
+        </div>
+        <div class="project-body">
+          <h3>End-to-End Data Pipeline &amp; Predictive Modeling</h3>
+          <p>Python/Pandas/SQL pipeline for extraction, cleaning and transformation, feeding Scikit-learn models tuned via feature engineering and hyperparameter search — an 18% improvement in model performance.</p>
+          <div class="project-tags"><span>Python</span><span>Pandas</span><span>SQL</span><span>Scikit-learn</span></div>
+          <div class="project-links">
+            <a href="https://github.com/harshvenna" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal">
+        <div class="project-thumb"><div class="thumb-grid"></div>
+          <div class="thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 17V9M12 17v-4M16 17v-8"/></svg></div>
+          <span class="project-badge">Dashboard</span>
+        </div>
+        <div class="project-body">
+          <h3>Interactive Data Analytics Dashboard</h3>
+          <p>Power BI dashboards tracking KPIs and business metrics across multiple integrated data sources, with DAX measures for dynamic reporting — a 30% improvement in reporting efficiency.</p>
+          <div class="project-tags"><span>Power BI</span><span>SQL</span><span>Excel</span><span>DAX</span></div>
+          <div class="project-links">
+            <a href="https://github.com/harshvenna" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card glass reveal">
+        <div class="project-thumb"><div class="thumb-grid"></div>
+          <div class="thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
+          <span class="project-badge">Web</span>
+        </div>
+        <div class="project-body">
+          <h3>Personal Portfolio Website</h3>
+          <p>This very site — a responsive, animated, SEO-optimized portfolio built with vanilla HTML, CSS and JavaScript, deployed on GitHub Pages.</p>
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span></div>
+          <div class="project-links">
+            <a href="https://github.com/harshvenna" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section class="section" id="certifications">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <p class="section-tag" style="margin-inline:auto;">Credentials</p>
+      <h2 class="section-title">Certifications &amp; <span class="accent-text">continuous learning.</span></h2>
+      <p class="section-desc" style="margin-inline:auto;">Structured learning to back up the hands-on work — replace these cards with your certificate PDFs in <code class="mono">assets/certificates/</code>.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card glass reveal">
+        <div class="cert-top">
+          <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        </div>
+        <div><span class="cert-issuer">Google</span><h4>Prepare Data for Exploration</h4><span class="cert-date">Google Data Analytics Certificate</span></div>
+        <a href="assets/certificates/google-prepare-data.pdf" target="_blank" class="cert-view">View Certificate <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </div>
+      <div class="cert-card glass reveal">
+        <div class="cert-top">
+          <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        </div>
+        <div><span class="cert-issuer">Google</span><h4>Process Data from Dirty to Clean</h4><span class="cert-date">Google Data Analytics Certificate</span></div>
+        <a href="assets/certificates/google-process-data.pdf" target="_blank" class="cert-view">View Certificate <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </div>
+      <div class="cert-card glass reveal">
+        <div class="cert-top">
+          <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        </div>
+        <div><span class="cert-issuer">SkillUp</span><h4>Product Management Foundations &amp; Stakeholder Collaboration</h4><span class="cert-date">SkillUp Certificate</span></div>
+        <a href="assets/certificates/skillup-pm-foundations.pdf" target="_blank" class="cert-view">View Certificate <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </div>
+      <div class="cert-card glass reveal">
+        <div class="cert-top">
+          <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 14 6 22l6-3 6 3-3-8"/></svg></div>
+        </div>
+        <div><span class="cert-issuer">SkillUp</span><h4>Developing and Delivering a New Product</h4><span class="cert-date">SkillUp Certificate</span></div>
+        <a href="assets/certificates/skillup-new-product.pdf" target="_blank" class="cert-view">View Certificate <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </div>
+      <div class="cert-card glass reveal">
+        <div class="cert-top">
+          <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 5v5l3 3"/></svg></div>
+        </div>
+        <div><span class="cert-issuer">Workshop</span><h4>AI Prompting Workshop</h4><span class="cert-date">Applied AI &amp; Prompt Engineering</span></div>
+        <a href="assets/certificates/ai-prompting-workshop.pdf" target="_blank" class="cert-view">View Certificate <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="section" id="education" style="background:var(--surface-1);">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <p class="section-tag" style="margin-inline:auto;">Education</p>
+      <h2 class="section-title">Academic <span class="accent-text">foundation.</span></h2>
+    </div>
+    <div class="edu-card glass reveal">
+      <div class="edu-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 10-10-5L2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg></div>
+      <div style="flex:1;">
+        <div class="edu-top">
+          <h3>Bachelor of Science — Computer Science</h3>
+          <span class="edu-period">2022 — 2026</span>
+        </div>
+        <p class="edu-school">Ramchand Kimatram Talreja College of Arts, Science &amp; Commerce, Ulhasnagar</p>
+        <div class="edu-meta">
+          <div class="edu-meta-item"><div class="num">9.1</div><div class="lbl">CGPA</div></div>
+          <div class="edu-meta-item"><div class="num">4 yrs</div><div class="lbl">Program</div></div>
+          <div class="edu-meta-item"><div class="num">CS</div><div class="lbl">Major</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS / KPI ================= -->
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <p class="section-tag" style="margin-inline:auto;">By The Numbers</p>
+      <h2 class="section-title">Snapshot of my <span class="accent-text">journey so far.</span></h2>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card glass reveal">
+        <div class="kpi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
+        <div class="kpi-num" data-count="6"><span class="val">0</span><span class="suffix">+</span></div>
+        <div class="kpi-lbl">Projects Completed</div>
+      </div>
+      <div class="kpi-card glass reveal">
+        <div class="kpi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="kpi-num" data-count="5"><span class="val">0</span><span class="suffix">+</span></div>
+        <div class="kpi-lbl">Certifications Earned</div>
+      </div>
+      <div class="kpi-card glass reveal">
+        <div class="kpi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-3V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1Z"/></svg></div>
+        <div class="kpi-num" data-count="1"><span class="val">0</span></div>
+        <div class="kpi-lbl">Internship</div>
+      </div>
+      <div class="kpi-num-wrap kpi-card glass reveal">
+        <div class="kpi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14 6 22l6-3 6 3-3-8"/><circle cx="12" cy="8" r="6"/></svg></div>
+        <div class="kpi-num"><span class="val">9.1</span></div>
+        <div class="kpi-lbl">CGPA</div>
+      </div>
+      <div class="kpi-card glass reveal">
+        <div class="kpi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div class="kpi-num" data-count="8"><span class="val">0</span><span class="suffix">+</span></div>
+        <div class="kpi-lbl">GitHub Repositories</div>
+      </div>
+      <div class="kpi-card glass reveal">
+        <div class="kpi-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+        <div class="kpi-num" data-count="12"><span class="val">0</span><span class="suffix">+</span></div>
+        <div class="kpi-lbl">Technologies Learned</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GITHUB ================= -->
+<section class="section" id="github" style="background:var(--surface-1);">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <p class="section-tag" style="margin-inline:auto;">Open Source</p>
+      <h2 class="section-title">Code lives on <span class="accent-text">GitHub.</span></h2>
+    </div>
+    <div class="github-panel glass reveal">
+      <div class="github-top">
+        <div class="github-profile">
+          <div class="github-avatar"><img src="assets/images/profile.jpg" alt="" width="56" height="56" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <div class="github-user">
+            <h4>Harsh Venna</h4>
+            <span>@harshvenna</span>
+          </div>
+        </div>
+        <a href="https://github.com/harshvenna" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+          View Profile
+        </a>
+      </div>
+      <div class="github-stats-row">
+        <div class="gh-stat"><div class="n" id="ghStatRepos">8+</div><div class="l">Repositories</div></div>
+        <div class="gh-stat"><div class="n" id="ghStatStars">6</div><div class="l">Total Stars</div></div>
+        <div class="gh-stat"><div class="n">Python</div><div class="l">Top Language</div></div>
+        <div class="gh-stat"><div class="n" id="ghStatStatus">Active</div><div class="l">Contribution Status</div></div>
+      </div>
+      <div class="repo-grid">
+        <div class="repo-card" data-repo="Nassau-Candy-Factory-Optimization-System">
+          <div class="repo-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18c-4.51 2-5-2-7-2m14 4v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 5.77 5.07 5.07 0 0 0 19.91 2S18.73 1.65 16 3.48a13.38 13.38 0 0 0-7 0C6.27 1.65 5.09 2 5.09 2A5.07 5.07 0 0 0 5 5.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Nassau-Candy-Factory-Optimization-System</div>
+          <p class="repo-desc">Factory reallocation &amp; shipping optimization — 6-model ML suite, Monte Carlo simulation, SHAP explainability, 12-tab Streamlit dashboard.</p>
+          <div class="repo-meta"><span><i class="lang-dot" style="background:#3572A5;"></i><span class="repo-lang">Python</span></span><span class="repo-stars">⭐ Featured</span><span class="repo-updated"></span></div>
+        </div>
+        <div class="repo-card" data-repo="-Workforce-Intelligence-Analytics-System-">
+          <div class="repo-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18c-4.51 2-5-2-7-2m14 4v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 5.77 5.07 5.07 0 0 0 19.91 2S18.73 1.65 16 3.48a13.38 13.38 0 0 0-7 0C6.27 1.65 5.09 2 5.09 2A5.07 5.07 0 0 0 5 5.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>Workforce-Intelligence-Analytics-System</div>
+          <p class="repo-desc">14-module workforce engagement &amp; burnout intelligence suite — ML prediction, SHAP explainability, K-Means segmentation, HR scenario simulator.</p>
+          <div class="repo-meta"><span><i class="lang-dot" style="background:#3572A5;"></i><span class="repo-lang">Python</span></span><span class="repo-stars">⭐ Featured</span><span class="repo-updated"></span></div>
+        </div>
+      </div>
+      <div class="contrib-graph">
+        <div class="contrib-label" id="contribLabel">Contribution activity (illustrative — connect the GitHub API for live data)</div>
+        <div class="contrib-grid" id="contribGrid"></div>
+        <img id="contribImg" alt="Harsh Venna's GitHub contribution graph" style="display:none; width:100%; border-radius:var(--r-sm); margin-top:0.5rem;">
+      </div>
+    </div>
+    <p class="gh-live-note" id="ghLiveNote"></p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal" style="grid-column:1/-1; max-width:640px;">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Let's talk <span class="accent-text">data.</span></h2>
+      <p class="section-desc">Open to Data Analyst roles, internships, and freelance analytics work. Reach out — I usually respond within a day.</p>
+    </div>
+
+    <div class="contact-info-card glass reveal">
+      <h3>Contact Information</h3>
+      <p>Prefer email or LinkedIn — happy to share dashboards, code walkthroughs, or a resume deep-dive.</p>
+
+      <div class="contact-row">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+        <div><div class="c-label">Email</div><div class="c-value">harshvennaix@gmail.com</div></div>
+      </div>
+      <div class="contact-row">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+        <div><div class="c-label">Phone</div><div class="c-value">+91 77568 94199</div></div>
+      </div>
+      <div class="contact-row">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="c-label">Location</div><div class="c-value">Ambernath West, Mumbai, Maharashtra, India</div></div>
+      </div>
+
+      <div class="contact-socials">
+        <a href="https://github.com/harshvenna" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg></a>
+        <a href="https://www.linkedin.com/in/harsh-venna-a7a7a53a9" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg></a>
+      </div>
+    </div>
+
+    <form class="contact-form-card glass reveal" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Data Analyst opportunity" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about the role or project..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/></svg>
+        Send Message
+      </button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">harsh<span>venna</span>.dev</div>
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hero-socials">
+        <a href="https://github.com/harshvenna" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.08.78 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg></a>
+        <a href="https://www.linkedin.com/in/harsh-venna-a7a7a53a9" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.15 1.45-2.15 2.94v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg></a>
+        <a href="mailto:harshvennaix@gmail.com" class="social-icon" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 Harsh Veeraraghavalu Venna. Built with HTML, CSS &amp; JavaScript — deployed on GitHub Pages.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
