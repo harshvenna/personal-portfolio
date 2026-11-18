@@ -2,7 +2,7 @@
 
 A premium, recruiter-focused portfolio website for **Harsh Veeraraghavalu Venna**, Data Analyst and Computer Science student. Built with pure HTML5, CSS3, and vanilla JavaScript — no frameworks, no build step, fully static and GitHub Pages ready.
 
-**Live demo:** `https://harshvenna.github.io/` *(after deployment — see below)*
+**Live demo:** `[https://harshvenna.github.io/](https://harshvenna.github.io/personal-portfolio/)` *(after deployment — see below)*
 
 ---
 
